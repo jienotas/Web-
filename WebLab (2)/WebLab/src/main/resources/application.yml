@@ -1,0 +1,21 @@
+server:
+  port: 8000
+
+spring:
+  profiles:
+    active: dev
+  main:
+    allow-circular-references: true
+  datasource:
+      driver-class-name: ${webLab.datasource.driver-class-name}
+      url: jdbc:mysql://${webLab.datasource.host}:${webLab.datasource.port}/${webLab.datasource.database}?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: ${webLab.datasource.username}
+      password: ${webLab.datasource.password}
+
+mybatis:
+  type-aliases-package: com.sanitation.pojo.entity
+  configuration:
+    map-underscore-to-camel-case: false
+
+
+
